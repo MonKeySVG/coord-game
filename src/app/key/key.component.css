@@ -1,12 +1,21 @@
 .square {
   width: 10vw;
   height: 10vw;
+  transition: background-color 0.1s ease;
 }
 
 .active {
-  background: red;
+  background: blue;
 }
 
 .inactive {
   background: black;
+}
+
+.pressed {
+  background: green;
+}
+
+.error {
+  background: red;
 }

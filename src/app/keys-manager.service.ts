@@ -29,6 +29,30 @@ export class KeysManagerService {
     this.activeListSubject.next(this.activeList);
   }
 
+  setClicked(index: number): void {
+    this.activeList[index] = KeyState.Pressed;
+    this.activeListSubject.next(this.activeList);
+    setTimeout(() => {
+      if (this.activeList[index] === KeyState.Pressed) {
+        this.activeList[index] = KeyState.Inactive;
+        this.activeListSubject.next(this.activeList);
+      }
+
+    }, 200);
+  }
+
+  setError(index: number): void {
+    this.activeList[index] = KeyState.Error;
+    this.activeListSubject.next(this.activeList);
+    setTimeout(() => {
+      if (this.activeList[index] === KeyState.Error) {
+        this.activeList[index] = KeyState.Inactive;
+        this.activeListSubject.next(this.activeList);
+      }
+    }, 200);
+  }
+
+
   setActiveForGame(): void {
     this.activeList.fill(KeyState.Inactive);
     let indices = this.generateXUniqueRandomIndices(this.activeCount);

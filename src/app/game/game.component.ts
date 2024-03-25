@@ -54,11 +54,13 @@ export class GameComponent {
 
       this.keysManagerService.setActive(0, false);
       this.keysManagerService.checkAndSetTrue(0);
+      this.keysManagerService.setClicked(0);
 
       this.earnPoints();
 
     } else if (event.key.toLowerCase() == keysLeft[0] && this.leftList[0] == KeyState.Inactive) {
       this.losePoints();
+      this.keysManagerService.setError(0);
     }
 
 
@@ -69,57 +71,85 @@ export class GameComponent {
     if (event.key.toLowerCase() == keysLeft[1] && this.leftList[1] == KeyState.Active) {
       this.keysManagerService.setActive(1, false);
       this.keysManagerService.checkAndSetTrue(1);
+      this.keysManagerService.setClicked(1);
+
       this.earnPoints();
     } else if (event.key.toLowerCase() == keysLeft[1] && this.leftList[1] == KeyState.Inactive) {
       this.losePoints();
+      this.keysManagerService.setError(1);
+
     }
 
     if (event.key.toLowerCase() == keysLeft[2] && this.leftList[2] == KeyState.Active) {
       this.keysManagerService.setActive(2, false);
       this.keysManagerService.checkAndSetTrue(2);
+      this.keysManagerService.setClicked(2);
+
       this.earnPoints();
     }else if (event.key.toLowerCase() == keysLeft[2] && this.leftList[2] == KeyState.Inactive) {
       this.losePoints();
+      this.keysManagerService.setError(2);
+
     }
 
     if (event.key.toLowerCase() == keysLeft[3] && this.leftList[3] == KeyState.Active) {
       this.keysManagerService.setActive(3, false);
       this.keysManagerService.checkAndSetTrue(3);
+      this.keysManagerService.setClicked(3);
+
       this.earnPoints();
     }else if (event.key.toLowerCase() == keysLeft[3] && this.leftList[3] == KeyState.Inactive) {
       this.losePoints();
+      this.keysManagerService.setError(3);
+
     }
 
     if (event.key.toLowerCase() == keysRight[0] && this.rightList[0] == KeyState.Active) {
       this.keysManagerService.setActive(4, false);
       this.keysManagerService.checkAndSetTrue(4);
+      this.keysManagerService.setClicked(4);
+
       this.earnPoints();
     } else if (event.key.toLowerCase() == keysRight[0] && this.rightList[0] == KeyState.Inactive) {
       this.losePoints();
+      this.keysManagerService.setError(4);
+
     }
 
     if (event.key.toLowerCase() == keysRight[1] && this.rightList[1] == KeyState.Active) {
       this.keysManagerService.setActive(5, false);
       this.keysManagerService.checkAndSetTrue(5);
+      this.keysManagerService.setClicked(5);
+
       this.earnPoints();
     } else if (event.key.toLowerCase() == keysRight[1] && this.rightList[1] == KeyState.Inactive) {
       this.losePoints();
+      this.keysManagerService.setError(5);
+
     }
 
     if (event.key.toLowerCase() == keysRight[2] && this.rightList[2] == KeyState.Active) {
       this.keysManagerService.setActive(6, false);
       this.keysManagerService.checkAndSetTrue(6);
+      this.keysManagerService.setClicked(6);
+
       this.earnPoints();
     } else if (event.key.toLowerCase() == keysRight[2] && this.rightList[2] == KeyState.Inactive) {
       this.losePoints();
+      this.keysManagerService.setError(6);
+
     }
 
     if (event.key.toLowerCase() == keysRight[3] && this.rightList[3] == KeyState.Active) {
       this.keysManagerService.setActive(7, false);
       this.keysManagerService.checkAndSetTrue(7);
+      this.keysManagerService.setClicked(7);
+
       this.earnPoints();
     } else if (event.key.toLowerCase() == keysRight[3] && this.rightList[3] == KeyState.Inactive) {
       this.losePoints();
+      this.keysManagerService.setError(7);
+
     }
 
 
