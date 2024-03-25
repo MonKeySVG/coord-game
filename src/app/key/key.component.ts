@@ -1,14 +1,30 @@
 import {Component, Input} from '@angular/core';
 
+export enum KeyState {
+  Active,
+  Error,
+  Pressed,
+  Inactive
+}
+
 @Component({
   selector: 'app-key',
   templateUrl: './key.component.html',
   styleUrl: './key.component.css'
 })
 export class KeyComponent {
-  @Input() isActive: boolean = false;
+  @Input() keyState: KeyState = KeyState.Active;
 
   getColor(): string {
-    return this.isActive ? 'active' : 'inactive';
+    switch (this.keyState) {
+      case KeyState.Active:
+        return 'active';
+      case KeyState.Error:
+        return 'error';
+      case KeyState.Pressed:
+        return 'pressed';
+      default:
+        return 'inactive';
+    }
   }
 }

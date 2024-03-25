@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {KeyState} from "../key/key.component";
 
 @Component({
   selector: 'app-keys-layout',
@@ -6,5 +7,7 @@ import {Component, Input} from '@angular/core';
   styleUrl: './keys-layout.component.css'
 })
 export class KeysLayoutComponent {
-  @Input() activeList: boolean[] = [];
+  @Input() keyStateList: KeyState[] = [];
+
+  protected readonly KeyState = KeyState;
 }
