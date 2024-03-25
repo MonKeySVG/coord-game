@@ -1,4 +1,17 @@
 .keys-container {
   display: flex;
-  gap: 50px;
+  justify-content: space-between;
+}
+
+.start-countdown {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+;
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {GameManagerService} from "../game-manager.service";
+import {KeyState} from "../key/key.component";
 
 @Component({
   selector: 'app-menu',
@@ -8,6 +9,8 @@ import {GameManagerService} from "../game-manager.service";
 })
 export class MenuComponent {
 
+  leftList: KeyState[] = [0, 0, 3, 3];
+  rightList: KeyState[] = [3, 0, 3, 3];
   constructor(private gameManagerService: GameManagerService) { }
 
   startGame() {
