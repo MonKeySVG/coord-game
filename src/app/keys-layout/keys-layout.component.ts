@@ -8,6 +8,7 @@ import {KeyState} from "../key/key.component";
 })
 export class KeysLayoutComponent {
   @Input() keyStateList: KeyState[] = [];
+  @Input() layoutClass: string = "";
 
   protected readonly KeyState = KeyState;
 }

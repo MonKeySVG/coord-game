@@ -14,6 +14,7 @@ export enum KeyState {
 })
 export class KeyComponent {
   @Input() keyState: KeyState = KeyState.Active;
+  @Input() layoutClass: string = "";
 
   getColor(): string {
     switch (this.keyState) {
