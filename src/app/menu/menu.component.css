@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.title-container {
+  margin-bottom: 15vw;
+}
+
 h1 {
   font-size: 7vw;
   margin: 0;
@@ -15,7 +19,60 @@ h1 {
   position: absolute;
   display: flex;
   gap: 25vw;
-  left: 0;
+  left: -2vw;
+  top: 0;
   scale: 1.5;
   transform: rotate(15deg);
+}
+
+.keys-container-2 {
+  pointer-events: none;
+  position: absolute;
+  display: flex;
+  gap: 25vw;
+  left: -20vw;
+  top: 40vw;
+  scale: 2.5;
+  transform: rotate(-35deg);
+}
+
+
+
+
+.button-container {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 10px;
+}
+
+button {
+  padding: 20px 40px;
+  font-size: 2rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+  backdrop-filter: blur(5px);
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+button:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  scale: 0.99;
+}
+
+.button-container:hover {
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  scale: 0.99;
+
 }

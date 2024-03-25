@@ -1,12 +1,21 @@
 <div class="menu-container">
-  <h1>COORDINATION <br/> GAME</h1>
+  <div class="title-container">
+    <h1>COORDINATION <br/> GAME</h1>
+  </div>
 
-  <div class="buttons-container">
+
+  <div class="button-container">
     <button (click)="startGame()">Start Game</button>
   </div>
 </div>
 
+
+
 <div class="keys-container">
   <app-keys-layout [keyStateList]="leftList"></app-keys-layout>
   <app-keys-layout [keyStateList]="rightList"></app-keys-layout>
+</div>
+
+<div class="keys-container-2">
+  <app-keys-layout [keyStateList]="leftList"></app-keys-layout>
 </div>
