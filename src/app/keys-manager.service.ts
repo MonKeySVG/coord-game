@@ -7,6 +7,8 @@ import {Subject} from "rxjs";
 export class KeysManagerService {
   activeList: boolean[] = Array(8).fill(false);
   private activeListSubject = new Subject<boolean[]>();
+
+  activeCount: number = 3;
   constructor() { }
 
   getActiveListObservable() {
@@ -27,9 +29,10 @@ export class KeysManagerService {
 
   setActiveForGame(): void {
     this.activeList.fill(false);
-    let indices = this.generateTwoUniqueRandomIndices();
-    this.setActive(indices[0], true);
-    this.setActive(indices[1], true);
+    let indices = this.generateXUniqueRandomIndices(this.activeCount);
+    for (let i = 0; i < this.activeCount; i++) {
+      this.setActive(indices[i], true);
+    }
   }
 
   private generateRandomIndex(): number {
@@ -44,13 +47,12 @@ export class KeysManagerService {
     return randomIndex;
   }
 
-  private generateTwoUniqueRandomIndices(): number[] {
-    let index1 = this.generateRandomIndex();
-    let index2 = this.generateRandomIndex();
-    while (index1 === index2) {
-      index2 = this.generateRandomIndex();
+  private generateXUniqueRandomIndices(x: number): number[] {
+    let uniqueIndices = new Set<number>();
+    while (uniqueIndices.size < x) {
+      uniqueIndices.add(this.generateRandomIndex());
     }
-    return [index1, index2];
+    return Array.from(uniqueIndices);
   }
 
   checkAndSetTrue(excludedIndex: number): void {

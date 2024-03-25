@@ -1,5 +1,6 @@
 import {Component, HostListener} from '@angular/core';
 import {KeysManagerService} from "../keys-manager.service";
+import {GameManagerService} from "../game-manager.service";
 
 @Component({
   selector: 'app-game',
@@ -7,12 +8,17 @@ import {KeysManagerService} from "../keys-manager.service";
   styleUrl: './game.component.css'
 })
 export class GameComponent {
+  gameStarted!: boolean;
+
   leftList: boolean[] = [];
   rightList: boolean[] = [];
 
-  constructor(private keysManagerService: KeysManagerService) { }
+  constructor(private keysManagerService: KeysManagerService, public gameManagerService: GameManagerService) { }
 
   ngOnInit(): void {
+    this.gameManagerService.getGameStartedObservable().subscribe(gameStarted => {
+      this.gameStarted = gameStarted;
+    });
     this.keysManagerService.getActiveListObservable().subscribe(activeList => {
       this.leftList = activeList.slice(0, 4);
       this.rightList = activeList.slice(4, 8);
@@ -26,6 +32,10 @@ export class GameComponent {
 
   @HostListener('window:keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
+    if (!this.gameStarted) {
+      return;
+    }
+
     const keys = [' '];
     const keysLeft = ['z', 'q', 's', 'd'];
     const keysRight = ['o', 'k', 'l', 'm'];

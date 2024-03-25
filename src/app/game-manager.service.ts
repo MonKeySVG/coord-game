@@ -12,6 +12,7 @@ export class GameManagerService {
   private startCountdown!: number;
 
   private startingGameSubject = new Subject<boolean>();
+  private gameStartedSubject = new Subject<boolean>();
 
   constructor() { }
 
@@ -26,6 +27,7 @@ export class GameManagerService {
       console.log(this.startCountdown);
       if (this.startCountdown === 0) {
         this.gameStarted = true;
+        this.gameStartedSubject.next(this.gameStarted);
         clearInterval(startIntervalId);
         const gameIntervalId = setInterval(() => {
           this.gameCountdown--;
@@ -48,5 +50,9 @@ export class GameManagerService {
 
   getStartingGameObservable() {
     return this.startingGameSubject.asObservable();
+  }
+
+  getGameStartedObservable() {
+    return this.gameStartedSubject.asObservable();
   }
 }

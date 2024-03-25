@@ -16,7 +16,6 @@ export class AppComponent {
 
   constructor(private gameManagerService: GameManagerService) { }
 
-
   ngOnInit() {
     this.gameManagerService.getStartingGameObservable().subscribe(startingGame => {
       if (startingGame) {
