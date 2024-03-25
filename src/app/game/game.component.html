@@ -4,6 +4,7 @@
 
 <div *ngIf="gameStarted" class="countdown-container">
   <h2>Game starts in: {{ gameManagerService.getGameCountdown() }}</h2>
+  <h2>Score: {{scoreService.getScore()}}</h2>
 </div>
 
 <div class="keys-container">
