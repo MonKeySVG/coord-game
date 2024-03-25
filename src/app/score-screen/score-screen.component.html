@@ -1,5 +1,21 @@
-<p>score-screen works!</p>
 
-<p>Score: {{ scoreService.getScore() }}</p>
+<div class="score-screen-container">
+  <div class="score-screen">
+    <h1>Stats</h1>
 
-<button (click)="startGame()">Start Game</button>
+    <div class="stats-container">
+      <p>Score: {{ scoreService.getScore() }}</p>
+      <p>Score: {{ scoreService.getScore() }}</p>
+      <p>Score: {{ scoreService.getScore() }}</p>
+      <p>Score: {{ scoreService.getScore() }}</p>
+    </div>
+
+
+    <div class="button-container">
+      <button (click)="startGame()">Start Game</button>
+    </div>
+  </div>
+
+</div>
+
+

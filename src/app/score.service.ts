@@ -7,6 +7,7 @@ export class ScoreService {
 
   private score: number = 0;
 
+
   constructor() { }
 
   incrementScore(amount: number) {

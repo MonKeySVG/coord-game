@@ -8,3 +8,7 @@
   overflow: hidden;
   background-color: #F7F4E9;
 }
+
+button {
+  font-family: 'Vortex', sans-serif;
+}
