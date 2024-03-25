@@ -5,9 +5,8 @@
 
     <div class="stats-container">
       <p>Score: {{ scoreService.getScore() }}</p>
-      <p>Score: {{ scoreService.getScore() }}</p>
-      <p>Score: {{ scoreService.getScore() }}</p>
-      <p>Score: {{ scoreService.getScore() }}</p>
+      <p>Highest Combo: {{ scoreService.getHighestCombo() }}</p>
+      <p>Accuracy: {{ scoreService.getAccuracy() }}</p>
     </div>
 
 
@@ -16,6 +15,16 @@
     </div>
   </div>
 
+</div>
+
+<div class="keys-container">
+  <app-keys-layout [keyStateList]="leftList"></app-keys-layout>
+  <app-keys-layout [keyStateList]="rightList"></app-keys-layout>
+</div>
+
+<div class="keys-container-2">
+  <app-keys-layout [keyStateList]="leftList"></app-keys-layout>
+  <app-keys-layout [keyStateList]="rightList"></app-keys-layout>
 </div>
 
 

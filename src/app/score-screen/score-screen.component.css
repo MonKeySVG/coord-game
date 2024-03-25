@@ -3,15 +3,6 @@
   justify-content: center;
   align-items: center;
   height: 85vh;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  transition: all 0.2s ease-in-out;
-
-
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255,255,255,0.5);
-  border-right: 1px solid rgba(255,255,255,0.2);
-  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .score-screen {
@@ -27,6 +18,15 @@
   border: 1px solid rgba(255,255,255,0.5);
   border-right: 1px solid rgba(255,255,255,0.2);
   border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+p {
+  font-size: 2rem;
+  font-weight: 300;
 }
 
 .button-container {
@@ -69,4 +69,26 @@ button:hover {
 
 .stats-container {
   margin-block: 5vw;
+}
+
+.keys-container {
+  pointer-events: none;
+  position: absolute;
+  display: flex;
+  gap: 25vw;
+  left: 5vw;
+  top: 0;
+  scale: 1.5;
+  transform: rotate(15deg);
+}
+
+.keys-container-2 {
+  pointer-events: none;
+  position: absolute;
+  display: flex;
+  gap: 25vw;
+  left: -20vw;
+  top: 100vw;
+  scale: 2;
+  transform: rotate(85deg);
 }

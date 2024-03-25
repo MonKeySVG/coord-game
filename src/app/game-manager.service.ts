@@ -19,7 +19,7 @@ export class GameManagerService {
   constructor(private scoreService: ScoreService) { }
 
   startGame() {
-    this.scoreService.resetScore();
+    this.scoreService.resetAll();
     this.startingGame = true;
     this.startingGameSubject.next(this.startingGame);
     this.startCountdown = 3;

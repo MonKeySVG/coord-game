@@ -19,6 +19,8 @@ export class GameComponent {
   multiplicatorDelay: number = 500; // Delai en ms
   multiplicator: number = 0;
   combo: number = 0;
+  totalCorrectPresses: number = 0;
+  totalFalsePresses: number = 0;
 
 
 
@@ -156,12 +158,17 @@ export class GameComponent {
   }
 
   earnPoints() {
+    this.totalCorrectPresses++;
     this.combo++;
     if (this.combo % 10 === 0) {
       this.multiplicator++;
     }
     const currentTime = Date.now();
 
+    this.scoreService.setHighestCombo(this.combo);
+
+    let accuracy = this.calculateAccuracy();
+    this.scoreService.setAccuracy(accuracy);
 
     if (currentTime - this.lastCombo <= this.multiplicatorDelay) {
       this.scoreService.incrementScore(1 + this.multiplicator);
@@ -176,8 +183,14 @@ export class GameComponent {
 
 
   losePoints() {
+    this.totalFalsePresses++;
     this.scoreService.decrementScore(5);
     this.combo = 0;
     this.multiplicator = 0;
+  }
+
+  calculateAccuracy() {
+    let accuracy = this.totalCorrectPresses / (this.totalCorrectPresses + this.totalFalsePresses) * 100;
+    return parseFloat(accuracy.toFixed(1));
   }
 }

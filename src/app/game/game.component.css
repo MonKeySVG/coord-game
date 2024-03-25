@@ -26,7 +26,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0.4;
+  opacity: 0.1;
+}
+
+.score-container h2 {
+  font-size: 7rem;
+  margin: 0;
+}
+
+.score-container p {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.start-countdown h2 {
+  font-size: 7rem;
+}
+
+.countdown-container h2 {
+  font-size: 2rem;
+  margin: 0;
 }
 
 .header {
