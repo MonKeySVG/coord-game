@@ -3,4 +3,6 @@
   <app-menu *ngIf="gameState === GameState.Menu"></app-menu>
 
   <app-game *ngIf="gameState === GameState.GameMode1"></app-game>
+
+  <app-score-screen *ngIf="gameState === GameState.Score"></app-score-screen>
 </div>

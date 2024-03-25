@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Subject} from "rxjs";
+import {ScoreService} from "./score.service";
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +14,12 @@ export class GameManagerService {
 
   private startingGameSubject = new Subject<boolean>();
   private gameStartedSubject = new Subject<boolean>();
+  private gameCountdownSubject = new Subject<number>();
 
-  constructor() { }
+  constructor(private scoreService: ScoreService) { }
 
   startGame() {
+    this.scoreService.resetScore();
     this.startingGame = true;
     this.startingGameSubject.next(this.startingGame);
     this.startCountdown = 3;
@@ -31,6 +34,7 @@ export class GameManagerService {
         clearInterval(startIntervalId);
         const gameIntervalId = setInterval(() => {
           this.gameCountdown--;
+          this.gameCountdownSubject.next(this.gameCountdown);
           console.log(this.gameCountdown);
           if (this.gameCountdown === 0) {
             clearInterval(gameIntervalId);
@@ -54,5 +58,9 @@ export class GameManagerService {
 
   getGameStartedObservable() {
     return this.gameStartedSubject.asObservable();
+  }
+
+  getGameCountdownObservable() {
+    return this.gameCountdownSubject.asObservable();
   }
 }

@@ -22,6 +22,12 @@ export class AppComponent {
         this.gameState = GameState.GameMode1;
       }
     });
+
+    this.gameManagerService.getGameCountdownObservable().subscribe(gameCountdown => {
+      if (gameCountdown === 0) {
+        this.gameState = GameState.Score;
+      }
+    });
   }
 
 

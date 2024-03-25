@@ -7,6 +7,7 @@ import { KeyComponent } from './key/key.component';
 import { KeysLayoutComponent } from './keys-layout/keys-layout.component';
 import { GameComponent } from './game/game.component';
 import { MenuComponent } from './menu/menu.component';
+import { ScoreScreenComponent } from './score-screen/score-screen.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MenuComponent } from './menu/menu.component';
     KeyComponent,
     KeysLayoutComponent,
     GameComponent,
-    MenuComponent
+    MenuComponent,
+    ScoreScreenComponent
   ],
   imports: [
     BrowserModule,

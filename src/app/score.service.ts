@@ -22,4 +22,8 @@ export class ScoreService {
   getScore() {
     return this.score;
   }
+
+  resetScore() {
+    this.score = 0;
+  }
 }
