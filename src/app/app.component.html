@@ -1,1 +1,6 @@
-<app-game></app-game>
+
+<div class="app-container">
+  <app-menu *ngIf="gameState === GameState.Menu"></app-menu>
+
+  <app-game *ngIf="gameState === GameState.GameMode1"></app-game>
+</div>
