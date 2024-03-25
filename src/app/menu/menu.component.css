@@ -11,6 +11,7 @@ h1 {
 }
 
 .keys-container {
+  pointer-events: none;
   position: absolute;
   display: flex;
   gap: 30vw;
