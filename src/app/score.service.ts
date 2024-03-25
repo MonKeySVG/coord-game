@@ -9,8 +9,13 @@ export class ScoreService {
 
   constructor() { }
 
-  incrementScore() {
-    this.score++;
+  incrementScore(amount: number) {
+    this.score += amount;
+    console.log('Score: ' + this.score);
+  }
+
+  decrementScore(amount: number) {
+    this.score -= amount;
     console.log('Score: ' + this.score);
   }
 
