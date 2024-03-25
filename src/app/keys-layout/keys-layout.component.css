@@ -1,0 +1,22 @@
+.keys {
+  display: grid;
+  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(2, 10vw);
+  gap: 10px;
+}
+
+.keys .up {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.keys .left {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.keys .down {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.keys .right {
+  grid-area: 2 / 3 / 3 / 4;
+}

@@ -1,0 +1,12 @@
+.square {
+  width: 10vw;
+  height: 10vw;
+}
+
+.active {
+  background: red;
+}
+
+.inactive {
+  background: black;
+}
