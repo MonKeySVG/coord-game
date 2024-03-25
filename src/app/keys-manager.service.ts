@@ -26,17 +26,43 @@ export class KeysManagerService {
   }
 
   setActiveForGame(): void {
+    this.activeList.fill(false);
     let indices = this.generateTwoUniqueRandomIndices();
     this.setActive(indices[0], true);
     this.setActive(indices[1], true);
   }
 
+  private generateRandomIndex(): number {
+    return Math.floor(Math.random() * this.activeList.length);
+  }
+
+  private generateRandomIndexWithExcluded(excludedIndex: number): number {
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * this.activeList.length);
+    } while (randomIndex === excludedIndex);
+    return randomIndex;
+  }
+
   private generateTwoUniqueRandomIndices(): number[] {
-    let index1 = Math.floor(Math.random() * this.activeList.length);
-    let index2 = Math.floor(Math.random() * this.activeList.length);
+    let index1 = this.generateRandomIndex();
+    let index2 = this.generateRandomIndex();
     while (index1 === index2) {
-      index2 = Math.floor(Math.random() * this.activeList.length);
+      index2 = this.generateRandomIndex();
     }
     return [index1, index2];
   }
+
+  checkAndSetTrue(excludedIndex: number): void {
+    console.log('checkAndSetTrue');
+    let randomIndex = this.generateRandomIndexWithExcluded(excludedIndex);
+    while (this.activeList[randomIndex]) {
+      randomIndex = this.generateRandomIndexWithExcluded(excludedIndex);
+    }
+    this.setActive(randomIndex, true);
+
+
+  }
+
+
 }
