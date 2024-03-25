@@ -15,6 +15,13 @@ export class GameComponent {
   leftList: boolean[] = [];
   rightList: boolean[] = [];
 
+  lastCombo: number = 0;
+  multiplicatorDelay: number = 500; // Delai en ms
+  multiplicator: number = 0;
+  combo: number = 0;
+
+
+
   constructor(private keysManagerService: KeysManagerService, public gameManagerService: GameManagerService, public scoreService: ScoreService) { }
 
   ngOnInit(): void {
@@ -43,69 +50,103 @@ export class GameComponent {
     const keysRight = ['o', 'k', 'l', 'm'];
 
     if (event.key.toLowerCase() == keysLeft[0] && this.leftList[0]) {
+
       this.keysManagerService.setActive(0, false);
       this.keysManagerService.checkAndSetTrue(0);
-      this.scoreService.incrementScore(1);
+
+      this.earnPoints();
+
     } else if (event.key.toLowerCase() == keysLeft[0] && !this.leftList[0]) {
-      this.scoreService.decrementScore(1);
+      this.losePoints();
     }
+
+
+
+
+
 
     if (event.key.toLowerCase() == keysLeft[1] && this.leftList[1]) {
       this.keysManagerService.setActive(1, false);
       this.keysManagerService.checkAndSetTrue(1);
-      this.scoreService.incrementScore(1);
+      this.earnPoints();
     } else if (event.key.toLowerCase() == keysLeft[1] && !this.leftList[1]) {
-      this.scoreService.decrementScore(1);
+      this.losePoints();
     }
 
     if (event.key.toLowerCase() == keysLeft[2] && this.leftList[2]) {
       this.keysManagerService.setActive(2, false);
       this.keysManagerService.checkAndSetTrue(2);
-      this.scoreService.incrementScore(1);
+      this.earnPoints();
     }else if (event.key.toLowerCase() == keysLeft[2] && !this.leftList[2]) {
-      this.scoreService.decrementScore(1);
+      this.losePoints();
     }
 
     if (event.key.toLowerCase() == keysLeft[3] && this.leftList[3]) {
       this.keysManagerService.setActive(3, false);
       this.keysManagerService.checkAndSetTrue(3);
-      this.scoreService.incrementScore(1);
+      this.earnPoints();
     }else if (event.key.toLowerCase() == keysLeft[3] && !this.leftList[3]) {
-      this.scoreService.decrementScore(1);
+      this.losePoints();
     }
 
     if (event.key.toLowerCase() == keysRight[0] && this.rightList[0]) {
       this.keysManagerService.setActive(4, false);
       this.keysManagerService.checkAndSetTrue(4);
-      this.scoreService.incrementScore(1);
+      this.earnPoints();
     } else if (event.key.toLowerCase() == keysRight[0] && !this.rightList[0]) {
-      this.scoreService.decrementScore(1);
+      this.losePoints();
     }
 
     if (event.key.toLowerCase() == keysRight[1] && this.rightList[1]) {
       this.keysManagerService.setActive(5, false);
       this.keysManagerService.checkAndSetTrue(5);
-      this.scoreService.incrementScore(1);
+      this.earnPoints();
     } else if (event.key.toLowerCase() == keysRight[1] && !this.rightList[1]) {
-      this.scoreService.decrementScore(1);
+      this.losePoints();
     }
 
     if (event.key.toLowerCase() == keysRight[2] && this.rightList[2]) {
       this.keysManagerService.setActive(6, false);
       this.keysManagerService.checkAndSetTrue(6);
-      this.scoreService.incrementScore(1);
+      this.earnPoints();
     } else if (event.key.toLowerCase() == keysRight[2] && !this.rightList[2]) {
-      this.scoreService.decrementScore(1);
+      this.losePoints();
     }
 
     if (event.key.toLowerCase() == keysRight[3] && this.rightList[3]) {
       this.keysManagerService.setActive(7, false);
       this.keysManagerService.checkAndSetTrue(7);
-      this.scoreService.incrementScore(1);
+      this.earnPoints();
     } else if (event.key.toLowerCase() == keysRight[3] && !this.rightList[3]) {
-      this.scoreService.decrementScore(1);
+      this.losePoints();
     }
 
 
+  }
+
+  earnPoints() {
+    this.combo++;
+    if (this.combo % 10 === 0) {
+      this.multiplicator++;
+    }
+    const currentTime = Date.now();
+
+
+    if (currentTime - this.lastCombo <= this.multiplicatorDelay) {
+      this.scoreService.incrementScore(1 + this.multiplicator);
+    } else {
+      this.scoreService.incrementScore(1);
+      this.multiplicator = 0;
+      this.combo = 0;
+    }
+
+    this.lastCombo = currentTime;
+  }
+
+
+  losePoints() {
+    this.scoreService.decrementScore(5);
+    this.combo = 0;
+    this.multiplicator = 0;
   }
 }
