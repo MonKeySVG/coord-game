@@ -157,6 +157,12 @@ export class GameComponent {
 
   }
 
+  startGame(restartButton: HTMLButtonElement) {
+    this.gameStarted = false;
+    restartButton.blur();
+    this.gameManagerService.startGame();
+  }
+
   earnPoints() {
     this.totalCorrectPresses++;
     this.combo++;

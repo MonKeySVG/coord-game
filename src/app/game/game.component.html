@@ -21,3 +21,12 @@
   <app-keys-layout [keyStateList]="leftList" [layoutClass]="'left-side'"></app-keys-layout>
   <app-keys-layout [keyStateList]="rightList" [layoutClass]="'right-side'"></app-keys-layout>
 </div>
+
+<section class="bottom-section">
+  <div class="button-container">
+    <button #restartButton (click)="startGame(restartButton)">Restart</button>
+    <p>Tab + Enter to fast restart</p>
+  </div>
+</section>
+
+

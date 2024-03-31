@@ -16,6 +16,5 @@ export class ScoreScreenComponent {
 
   startGame() {
     this.gameManagerService.startGame();
-    console.log('Game started');
   }
 }

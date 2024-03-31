@@ -57,5 +57,52 @@
 .countdown-container {
   text-align: center;
   opacity: 0.4;
-  margin-bottom: 10vw;
+  margin-bottom: 5vw;
+}
+
+.bottom-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vw;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 10px;
+}
+
+button {
+  outline-color: black;
+  color: rgba(0, 0, 0, 0.34);
+  padding: 20px 40px;
+  font-size: 2rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease-in-out;
+  backdrop-filter: blur(5px);
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-right: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.button-container p {
+  opacity: 0.3;
+  text-align: center;
+  width: 80%;
 }

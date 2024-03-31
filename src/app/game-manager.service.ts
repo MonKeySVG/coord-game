@@ -19,7 +19,12 @@ export class GameManagerService {
   constructor(private scoreService: ScoreService) { }
 
   startGame() {
+    if (this.startingGame) {
+      return;
+    }
+
     this.scoreService.resetAll();
+    this.gameStarted = false;
     this.startingGame = true;
     this.startingGameSubject.next(this.startingGame);
     this.startCountdown = 3;
@@ -30,6 +35,7 @@ export class GameManagerService {
       console.log(this.startCountdown);
       if (this.startCountdown === 0) {
         this.gameStarted = true;
+        this.startingGame = false;
         this.gameStartedSubject.next(this.gameStarted);
         clearInterval(startIntervalId);
         const gameIntervalId = setInterval(() => {
@@ -38,6 +44,10 @@ export class GameManagerService {
           console.log(this.gameCountdown);
           if (this.gameCountdown === 0) {
             clearInterval(gameIntervalId);
+          }
+          if (!this.gameStarted) {
+            clearInterval(gameIntervalId);
+            this.gameCountdown = 30
           }
         }, 1000);
       }
