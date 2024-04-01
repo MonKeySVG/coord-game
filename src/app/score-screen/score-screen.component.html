@@ -4,15 +4,19 @@
     <h1>Stats</h1>
 
     <div class="stats-container">
+      <p>Better than {{scoreService.getBetterThanPercentage()}}% of the players</p>
       <p>Score: {{ scoreService.getScore() }}</p>
       <p>Highest Combo: {{ scoreService.getHighestCombo() }}</p>
       <p>Accuracy: {{ scoreService.getAccuracy() }}</p>
     </div>
 
 
-    <div class="button-container">
-      <button (click)="startGame()">Start Game</button>
+    <div class="buttons-section">
+      <div class="button-container">
+        <button (click)="startGame()">Start Game</button>
+      </div>
     </div>
+
   </div>
 
 </div>

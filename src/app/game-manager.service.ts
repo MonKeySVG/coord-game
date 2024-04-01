@@ -44,6 +44,7 @@ export class GameManagerService {
           console.log(this.gameCountdown);
           if (this.gameCountdown === 0) {
             clearInterval(gameIntervalId);
+            this.scoreService.submitScore();
           }
           if (!this.gameStarted) {
             clearInterval(gameIntervalId);

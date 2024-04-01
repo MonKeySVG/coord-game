@@ -27,6 +27,8 @@ export class GameComponent {
   constructor(private keysManagerService: KeysManagerService, public gameManagerService: GameManagerService, public scoreService: ScoreService) { }
 
   ngOnInit(): void {
+    this.scoreService.getLeaderboard();
+
     this.gameManagerService.getGameStartedObservable().subscribe(gameStarted => {
       this.gameStarted = gameStarted;
     });

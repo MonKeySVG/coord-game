@@ -8,6 +8,7 @@ import { KeysLayoutComponent } from './keys-layout/keys-layout.component';
 import { GameComponent } from './game/game.component';
 import { MenuComponent } from './menu/menu.component';
 import { ScoreScreenComponent } from './score-screen/score-screen.component';
+import { HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ScoreScreenComponent } from './score-screen/score-screen.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

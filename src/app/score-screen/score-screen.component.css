@@ -75,7 +75,7 @@ button:hover {
   pointer-events: none;
   position: absolute;
   display: flex;
-  gap: 25vw;
+  gap: 30vw;
   left: 5vw;
   top: 0;
   scale: 1.5;
@@ -87,8 +87,13 @@ button:hover {
   position: absolute;
   display: flex;
   gap: 25vw;
-  left: -20vw;
+  left: -30vw;
   top: 100vw;
   scale: 2;
   transform: rotate(85deg);
+}
+
+.buttons-section {
+  display: flex;
+  justify-content: center;
 }
