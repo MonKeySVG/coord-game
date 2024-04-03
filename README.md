@@ -21,4 +21,4 @@ Ce projet constitue une application ludique créée à l'aide d'Angular. Son obj
 
 ## Utilisation
 
-Pour lancer l'application, utilisez `ng serve`. Ouvrez ensuite `http://localhost:4200/` dans votre navigateur.
+Pour lancer l'application, utilisez `ng serve`. Ouvrez ensuite `http://localhost:4200/` dans votre navigateur (Ou directement ici https://coord-game.web.app/).
