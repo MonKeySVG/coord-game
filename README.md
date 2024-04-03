@@ -15,8 +15,8 @@ Ce projet constitue une application ludique créée à l'aide d'Angular. Son obj
 
 1. Installez Node.js et npm.
 2. Installez Angular CLI en utilisant `npm install -g @angular/cli`.
-3. Clonez ce dépôt en utilisant `git clone https://github.com/username/repository.git`.
-4. Accédez au dossier du projet en utilisant `cd repository`.
+3. Clonez ce dépôt en utilisant `git clone https://github.com/MonKeySVG/coord-game.git`.
+4. Accédez au dossier du projet en utilisant `cd coord-game`.
 5. Installez les dépendances du projet en utilisant `npm install`.
 
 ## Utilisation
