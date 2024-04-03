@@ -1,27 +1,24 @@
-# CoordGame
+# Coordination Game
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+## Introduction
 
-## Development server
+Ce projet constitue une application ludique créée à l'aide d'Angular. Son objectif est d'évaluer la coordination du joueur entre ses deux mains et ses yeux.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Utilisées
 
-## Code scaffolding
+- TypeScript
+- JavaScript
+- npm
+- Angular
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation et Configuration
 
-## Build
+1. Installez Node.js et npm.
+2. Installez Angular CLI en utilisant `npm install -g @angular/cli`.
+3. Clonez ce dépôt en utilisant `git clone https://github.com/username/repository.git`.
+4. Accédez au dossier du projet en utilisant `cd repository`.
+5. Installez les dépendances du projet en utilisant `npm install`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Utilisation
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Pour lancer l'application, utilisez `ng serve`. Ouvrez ensuite `http://localhost:4200/` dans votre navigateur.
